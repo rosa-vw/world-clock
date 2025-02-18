@@ -22,9 +22,9 @@ select {
   width: 300px;
   padding: 10px;
   border-radius: 8px;
-  border: none;
   color: #488b8f;
   margin-bottom: 20px;
+  border-color: #488b8f;
 }
 
 select:focus-visible {
@@ -37,6 +37,11 @@ main {
   margin: 0 auto;
   max-width: 600px;
   color: #488b8f;
+}
+
+span {
+  font-size: 28px;
+  opacity: 0.75;
 }
 
 .clock {
