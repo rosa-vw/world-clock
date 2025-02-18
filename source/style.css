@@ -6,7 +6,7 @@ body {
 header {
   background-color: #faf9f9;
   text-align: center;
-  width: 600px;
+  width: 400px;
   display: block;
   margin: 50px auto 25px auto;
   border-radius: 12px;
@@ -60,7 +60,7 @@ span {
 .time {
   font-size: 44px;
   font-weight: 900;
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
 }
 
 .date {
