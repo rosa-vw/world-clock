@@ -23,6 +23,9 @@ setInterval(setClock, 1000);
 
 function updateCity(event) {
   let timezone = event.target.value;
+  if (timezone === "Current") {
+    timezone = moment.tz.guess();
+  }
   let city = timezone.split("/").pop().replace("_", " ");
   let cityTime = moment().tz(timezone);
   let clocks = document.querySelector("main");
