@@ -20,3 +20,20 @@ function setClock() {
 
 setClock();
 setInterval(setClock, 1000);
+
+function updateCity(event) {
+  let timezone = event.target.value;
+  let city = timezone.split("/").pop().replace("_", " ");
+  let cityTime = moment().tz(timezone);
+  let clocks = document.querySelector("main");
+  clocks.innerHTML = ` <div class="clock">
+        <div class="city">${city}</div>
+        <div class="time">${cityTime.format("HH:mm")}<span>${cityTime.format(
+    ":ss"
+  )}</span></div>
+        <div class="date">${cityTime.format("LL")}</div>
+      </div>`;
+}
+
+let dropDownSelection = document.querySelector("#drop-down");
+dropDownSelection.addEventListener("change", updateCity);
