@@ -16,6 +16,14 @@ function setClock() {
   buenosAiresDate.innerHTML = moment()
     .tz("America/Argentina/Buenos_Aires")
     .format("LL");
+
+  let vancouver = document.querySelector("#vancouver");
+  let vancouverTime = vancouver.querySelector(".time");
+  vancouverTime.innerHTML = moment()
+    .tz("America/Vancouver")
+    .format("HH:mm[<span>]:ss[</span>]");
+  let vancouverDate = vancouver.querySelector(".date");
+  vancouverDate.innerHTML = moment().tz("America/Vancouver").format("LL");
 }
 
 setClock();
@@ -31,11 +39,11 @@ function updateCity(event) {
   let clocks = document.querySelector("main");
   clocks.innerHTML = ` <div class="clock">
         <div class="city">${city}</div>
-        <div class="time">${cityTime.format("HH:mm")}<span>${cityTime.format(
-    ":ss"
-  )}</span></div>
+        <div class="time">${cityTime.format("HH:mm")}</div>
         <div class="date">${cityTime.format("LL")}</div>
       </div>`;
+  let home = document.querySelector("section");
+  home.classList.remove("hide");
 }
 
 let dropDownSelection = document.querySelector("#drop-down");
